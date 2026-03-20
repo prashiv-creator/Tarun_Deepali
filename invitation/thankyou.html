@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Tarun & Deepali's Wedding</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap'>
+    
+    <style>
+        .heart-icon {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: heartBeatAndRotate 2s ease-in-out infinite;
+            display: inline-block;
+            color: #e25c67;
+        }
+        
+        @keyframes heartBeatAndRotate {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(0deg);
+            }
+            75% {
+                transform: scale(1.1) rotate(5deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        .section-title {
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% {
+                color: #b48a78;
+                text-shadow: 0 0 5px rgba(180, 138, 120, 0.3);
+            }
+            50% {
+                color: #e25c67;
+                text-shadow: 0 0 20px rgba(226, 92, 103, 0.5);
+            }
+        }
+        
+        .card-box {
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        #wishConfirmation {
+            animation: confirmationPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes confirmationPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/img/left.png" alt="flowers left" class="top-left-decoration">
+    <img src="../assets/img/right.png" alt="flowers right" class="top-right-decoration">
+    
+    <div class="thankyou-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 20px;">
+        <div class="card-box" style="padding: 50px 40px; max-width: 600px;">
+            <h1 class="section-title" style="font-size: 3em; margin-bottom: 20px;">Thank You!</h1>
+            
+            <div class="heart-icon" style="font-size: 4em; margin: 20px 0;">&#10084;&#65039;</div>
+            
+            <p style="font-family: 'Arvo', serif; font-size: 1.2em; color: #7a5c4d; line-height: 1.6; margin-bottom: 30px;">
+                Thank you for your lovely wishes!<br>
+                Your presence and blessings mean the world to us!
+            </p>
+            
+            <div id="wishConfirmation" style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #c3e6cb;">
+                <p style="color: #155724; font-family: 'Arvo', serif; margin: 0;">
+                    <strong>✅ Your wishes have been received!</strong><br>
+                    We've saved your beautiful message for our wedding memories.
+                </p>
+            </div>
+            
+            <div class="couple-names" style="margin: 30px 0;">
+                <h2 class="heading-pink" style="font-size: 2em;">Tarun Mahor</h2>
+                <p class="text-accent" style="font-size: 1.5em; margin: 10px 0;">&</p>
+                <h2 class="heading-pink" style="font-size: 2em;">Deepali Rajwaniya</h2>
+            </div>
+            
+            <p class="text-dancing text-accent" style="font-size: 1.3em; margin-top: 30px;">
+                We can't wait to celebrate with you!<br>
+                See you on 25th April 2026
+            </p>
+            
+            <a href="main.html" class="btn-primary" style="margin-top: 30px;" onclick="showThankYouTimeline(event)">Thank you</a>
+        
+        <!-- Thank You Image Display -->
+        <div id="thankYouImageContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center;">
+            <img src="../assets/img/Thanku.png" alt="Thank You" style="max-width: 90%; max-height: 90%; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+            <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 1.5em; cursor: pointer;" onclick="closeThankYouImage()">✕</div>
+        </div>
+        
+        <!-- PDF Display -->
+        <div id="pdfContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center;">
+            <iframe src="Tarun & Dipali.pdf" style="width: 90%; height: 90%; border: none; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);"></iframe>
+            <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 1.5em; cursor: pointer;" onclick="closePDF()">✕</div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="music">
+        <audio src="../assets/mp3/song.mp3" id="my_audio" loop="loop"></audio>
+    </div>
+    <script src="../js/continuous-audio.js"></script>
+    
+    <script>
+        // Timeline functionality for Thank You button
+        function showThankYouTimeline(event) {
+            event.preventDefault();
+            
+            // Show the Thank You image
+            const imageContainer = document.getElementById('thankYouImageContainer');
+            imageContainer.style.display = 'flex';
+            imageContainer.style.opacity = '0';
+            
+            // Fade in animation
+            setTimeout(() => {
+                imageContainer.style.transition = 'opacity 0.5s ease';
+                imageContainer.style.opacity = '1';
+            }, 100);
+            
+            // After 5 seconds, hide image and show PDF
+            setTimeout(() => {
+                imageContainer.style.opacity = '0';
+                setTimeout(() => {
+                    imageContainer.style.display = 'none';
+                    showPDF();
+                }, 500);
+            }, 5000);
+        }
+        
+        function showPDF() {
+            const pdfContainer = document.getElementById('pdfContainer');
+            pdfContainer.style.display = 'flex';
+            pdfContainer.style.opacity = '0';
+            
+            // Fade in animation
+            setTimeout(() => {
+                pdfContainer.style.transition = 'opacity 0.5s ease';
+                pdfContainer.style.opacity = '1';
+            }, 100);
+        }
+        
+        function closeThankYouImage() {
+            const imageContainer = document.getElementById('thankYouImageContainer');
+            imageContainer.style.opacity = '0';
+            setTimeout(() => {
+                imageContainer.style.display = 'none';
+            }, 500);
+        }
+        
+        function closePDF() {
+            const pdfContainer = document.getElementById('pdfContainer');
+            pdfContainer.style.opacity = '0';
+            setTimeout(() => {
+                pdfContainer.style.display = 'none';
+            }, 500);
+        }
+        
+        // Check if user came from guest book submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const wishSubmitted = sessionStorage.getItem('wishSubmitted');
+            const submissionTime = sessionStorage.getItem('submissionTime');
+            const confirmationDiv = document.getElementById('wishConfirmation');
+            
+            if (wishSubmitted === 'true' && submissionTime) {
+                // Show wish confirmation
+                confirmationDiv.style.display = 'block';
+                
+                // Clear the session flags
+                sessionStorage.removeItem('wishSubmitted');
+                sessionStorage.removeItem('submissionTime');
+                
+                // Add animation
+                confirmationDiv.style.opacity = '0';
+                confirmationDiv.style.transform = 'translateY(-20px)';
+                
+                setTimeout(() => {
+                    confirmationDiv.style.transition = 'all 0.5s ease';
+                    confirmationDiv.style.opacity = '1';
+                    confirmationDiv.style.transform = 'translateY(0)';
+                }, 100);
+            } else {
+                // Hide confirmation if not from guest book
+                confirmationDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

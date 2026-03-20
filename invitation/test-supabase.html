@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Supabase Connection</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>Supabase Connection Test</h1>
+    <button onclick="testConnection()">Test Connection</button>
+    <button onclick="testDataFetch()">Test Data Fetch</button>
+    <div id="results"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../supabase-config.js"></script>
+
+    <script>
+        function addResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = message;
+            resultsDiv.appendChild(div);
+        }
+
+        async function testConnection() {
+            addResult('Testing Supabase connection...', 'info');
+            
+            try {
+                const api = window.SupabaseAPI;
+                const isConnected = await api.checkConnection();
+                
+                if (isConnected) {
+                    addResult('✅ Supabase connection successful!', 'success');
+                } else {
+                    addResult('❌ Supabase connection failed', 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testDataFetch() {
+            addResult('Testing data fetch...', 'info');
+            
+            try {
+                const api = window.SupabaseAPI;
+                const result = await api.getAllWishes();
+                const wishes = result.wishes || result || [];
+                
+                addResult(`✅ Successfully fetched ${wishes.length} wishes`, 'success');
+                
+                if (wishes.length > 0) {
+                    addResult(`Latest wish: "${wishes[0].message}" by ${wishes[0].name}`, 'info');
+                }
+            } catch (error) {
+                addResult(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+    </script>
+</body>
+</html>

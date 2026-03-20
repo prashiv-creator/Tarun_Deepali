@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" >
+   <head>
+      <link rel="shortcut icon" href="favicon.png" type="image/png"> 
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="description"
+         content="With the divine grace of the almighty, inviting you and your family to Sonali's wedding to be held on 25th Aprilember at Ishwar  Marriage Garden, Jaishingpura khor, Jaipur from 7:00 PM onwards.">
+      <meta name="author" content="Vinit Shahdeo">
+      <meta name="email" content="vinitshahdeo@gmail.com">
+      <meta name="copyright" content="Vinit Shahdeo 2020" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Wedding Invitation | 25th April | Jaishingpura khor, Jaipur" />
+      <meta property="og:description"
+         content="With the divine grace of the almighty, inviting you and your family to elder sister's wedding to be held on 25th Aprilember at Ishwar  Marriage Garden, Jaishingpura khor, Jaipur from 7:00 PM onwards." />
+      <!-- Removed unused og:image reference -->
+      <meta property="og:url" content="" />
+      <meta property="og:site_name" content="Wedding Invitation | 25th April" />
+      <meta name="twitter:card" content="website">
+      <meta name="twitter:site" content="Wedding Invitation | 25th April">
+      <meta name="twitter:title" content="Wedding Invitation | 25th April">
+      <meta name="twitter:description"
+         content="With the divine grace of the almighty, inviting you and your family to elder sister's wedding to be held on 25th Aprilember at Ishwar  Marriage Garden, Jaishingpura khor, Jaipur from 7:00 PM onwards.">
+      <meta name="twitter:creator" content="@Vinit_Shahdeo">
+      <!-- Removed unused twitter:image reference -->
+
+      <title>Wedding Invitation | April 25 | Jaipur</title>
+
+      <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap'>
+      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>     
+      
+      <!-- Initial Welcome Popup -->
+      <div id="initial-welcome-popup" class="welcome-overlay" style="display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; text-align: center;">
+         <div class="welcome-box card-box" style="text-align: center; max-width: 95%; width: 400px; padding: 30px; margin: 0 auto; background: #fff8f0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;">
+            <h1 class="heading-dancing" style="font-size: 2.2em; margin-bottom: 20px; color: #b48a78; text-align: center;">Welcome to Mahor Family</h1>
+            <p style="font-family: 'Arvo', serif; color: #7a5c4d; font-size: 1em; margin-bottom: 30px; line-height: 1.5; text-align: center;">We are delighted to invite you to celebrate with us!</p>
+            <button onclick="closeInitialPopup()" class="btn-gradient" style="font-size: 1em; padding: 12px 25px; margin: 0 auto; display: block;">Enter Invitation</button>
+         </div>
+      </div>
+
+      <style>
+      @media (max-width: 768px) {
+         #initial-welcome-popup .welcome-box {
+            width: 90% !important;
+            padding: 25px !important;
+         }
+         #initial-welcome-popup h1 {
+            font-size: 1.8em !important;
+         }
+         #initial-welcome-popup p {
+            font-size: 0.9em !important;
+         }
+         #initial-welcome-popup button {
+            font-size: 0.9em !important;
+            padding: 10px 20px !important;
+         }
+      }
+      
+      @media (max-width: 480px) {
+         #initial-welcome-popup .welcome-box {
+            width: 95% !important;
+            padding: 20px !important;
+         }
+         #initial-welcome-popup h1 {
+            font-size: 1.5em !important;
+         }
+         #initial-welcome-popup p {
+            font-size: 0.85em !important;
+         }
+      }
+      
+      /* Welcome Message Animations */
+      .welcome-box {
+            animation: slideInUp 1s ease-out;
+      }
+      
+      .welcome-box h2 {
+            animation: fadeInScale 1.5s ease-out;
+      }
+      
+      .welcome-box h1:first-of-type {
+            animation: slideInLeft 1.2s ease-out;
+      }
+      
+      .welcome-box h2.text-accent {
+            animation: heartBeat 1.5s ease-in-out infinite;
+      }
+      
+      .welcome-box h1:last-of-type {
+            animation: slideInRight 1.2s ease-out;
+      }
+      
+      .welcome-form {
+            animation: fadeInUp 1.8s ease-out;
+      }
+      
+      .welcome-form input {
+            animation: inputGlow 2s ease-in-out infinite;
+      }
+      
+      .welcome-form button {
+            animation: buttonPulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes slideInUp {
+            from {
+               transform: translateY(100px);
+               opacity: 0;
+            }
+            to {
+               transform: translateY(0);
+               opacity: 1;
+            }
+      }
+      
+      @keyframes fadeInScale {
+            from {
+               transform: scale(0.8);
+               opacity: 0;
+            }
+            to {
+               transform: scale(1);
+               opacity: 1;
+            }
+      }
+      
+      @keyframes slideInLeft {
+            from {
+               transform: translateX(-100px);
+               opacity: 0;
+            }
+            to {
+               transform: translateX(0);
+               opacity: 1;
+            }
+      }
+      
+      @keyframes slideInRight {
+            from {
+               transform: translateX(100px);
+               opacity: 0;
+            }
+            to {
+               transform: translateX(0);
+               opacity: 1;
+            }
+      }
+      
+      @keyframes heartBeat {
+            0%, 100% {
+               transform: scale(1);
+            }
+            50% {
+               transform: scale(1.1);
+            }
+      }
+      
+      @keyframes fadeInUp {
+            from {
+               transform: translateY(30px);
+               opacity: 0;
+            }
+            to {
+               transform: translateY(0);
+               opacity: 1;
+            }
+      }
+      
+      @keyframes inputGlow {
+            0%, 100% {
+               box-shadow: 0 0 5px rgba(180, 138, 120, 0.3);
+            }
+            50% {
+               box-shadow: 0 0 20px rgba(180, 138, 120, 0.6);
+            }
+      }
+      
+      @keyframes buttonPulse {
+            0%, 100% {
+               transform: scale(1);
+               box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+            50% {
+               transform: scale(1.05);
+               box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            }
+      }
+      
+      /* Guest Welcome Message Animation */
+      #guest-welcome-message {
+            animation: welcomeMessageSlide 1s ease-out;
+      }
+      
+      @keyframes welcomeMessageSlide {
+            from {
+               transform: translateY(-20px);
+               opacity: 0;
+            }
+            to {
+               transform: translateY(0);
+               opacity: 1;
+            }
+      }
+      
+      /* Floating Hearts Animation */
+      .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+      }
+      
+      .heart {
+            position: absolute;
+            color: #e25c67;
+            animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+            0% {
+               transform: translateY(100vh) rotate(0deg);
+               opacity: 0;
+            }
+            10% {
+               opacity: 1;
+            }
+            90% {
+               opacity: 1;
+            }
+            100% {
+               transform: translateY(-100vh) rotate(360deg);
+               opacity: 0;
+            }
+      }
+      </style>
+
+             <!-- Welcome Overlay -->
+             <div id="welcome-overlay" class="welcome-overlay" style="display: none;">
+                  <div class="floating-hearts" id="floating-hearts"></div>
+                  <div class="welcome-box" id="welcome-box">
+                      <h2 class="text-dancing text-accent" style="font-size: 2em; margin-bottom: 20px;">Welcome to the Wedding Invitation</h2>
+                      <h1 class="heading-dancing" style="font-size: 2.5em;">Tarun Mahor </h1>
+                      <h2 class="text-accent" style="font-size: 1.8em; margin: 10px 0;">&</h2>
+                      <h1 class="heading-dancing" style="font-size: 2.5em;">Deepali Rajwaniya</h1>
+                      <div id="welcome-form">
+                         <p style="font-family: 'Arvo', serif; color: #7a5c4d;">Please enter your name to continue:</p>
+                         <input type="text" id="guest-name" placeholder="Enter your name" />
+                         <button id="enter-btn" class="btn-primary">View Our Story</button>
+                      </div>
+                      <div id="guest-welcome-message" style="display:none;"></div>
+                  </div>
+             </div>
+
+             
+
+             <!-- Story Overlay (Last Stage) -->
+             <div id="story-overlay" class="story-overlay" style="display:none;">
+                <div class="story-box">
+                   <h2>Our Love Story</h2>
+                   <div class="story-timeline">
+                      <div class="story-item-overlay">
+                         <div class="story-icon">&#10084;</div>
+                         <div class="story-content">
+                            <h3>First Meeting</h3>
+                            <p>It all started with a chance encounter that changed everything. Two souls met, and the universe conspired to bring them together.</p>
+                         </div>
+                      </div>
+                      <div class="story-item-overlay">
+                         <div class="story-icon">&#9733;</div>
+                         <div class="story-content">
+                            <h3>First Date</h3>
+                            <p>That magical evening filled with laughter and endless conversations. We knew something beautiful was beginning.</p>
+                         </div>
+                      </div>
+                      <div class="story-item-overlay">
+                         <div class="story-icon">&#128141;</div>
+                         <div class="story-content">
+                            <h3>The Proposal</h3>
+                            <p>With a heart full of love and a ring full of promises, we decided to spend forever together.</p>
+                         </div>
+                      </div>
+                      <div class="story-item-overlay">
+                         <div class="story-icon">&#127801;</div>
+                         <div class="story-content">
+                            <h3>The Wedding</h3>
+                            <p>Here we are, ready to begin our happily ever after. Join us as we tie the knot and start our new journey!</p>
+                         </div>
+                      </div>
+                   </div>
+                   <button id="proceed-to-programs" class="proceed-btn" style="display: inline-block; margin-top: 25px; padding: 15px 40px; background: linear-gradient(135deg, #e25c67, #b48a78); color: white; text-decoration: none; border: none; border-radius: 30px; font-size: 1.2em; font-family: 'Dancing Script', cursive; box-shadow: 0 4px 15px rgba(226, 92, 103, 0.3); cursor: pointer; transition: all 0.3s;">View Programs</button>
+                </div>
+             </div>
+
+             <!-- Middle Programs Overlay -->
+             <div id="programs-overlay" class="programs-overlay" style="display:none;">
+                <div class="programs-box">
+                   <h2>Wedding Programs</h2>
+                   <ul class="programs-list">
+                      <li><span class="program-title">Lagan</span> <span class="program-date">22 April 2026</span></li>
+                      <li><span class="program-title">Tika</span> <span class="program-date">22 April 2026</span></li>
+                      <li><span class="program-title">Jiman</span> <span class="program-date">22 April 2026</span></li>
+                      <li><span class="program-title">Chak</span> <span class="program-date">24 April 2026</span></li>
+                      <li><span class="program-title">Mehndi</span> <span class="program-date">24 April 2026</span></li>
+                      <li><span class="program-title">Sangeet</span> <span class="program-date">24 April 2026</span></li>
+                      <li><span class="program-title">Wedding</span> <span class="program-date">25 April 2026</span></li>
+                   </ul>
+                   <div class="programs-note">We warmly invite you to join all the celebrations!</div>
+                   <a href="invitation/programs.html" class="proceed-btn" style="display: inline-block; margin-top: 20px; padding: 12px 30px; background: #b48a78; color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em;">Proceed to Programs</a>
+                </div>
+             </div>
+
+ 
+             
+
+      <!-- Photo Gallery Section --
+      <section class="gallery-section">
+         <h2>Our Beautiful Moments</h2>
+         <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+               <div class="gallery-slide">
+                  <span>Photo 1 - Add your image here</span>
+               </div>
+               <div class="gallery-slide">
+                  <span>Photo 2 - Add your image here</span>
+               </div>
+               <div class="gallery-slide">
+                  <span>Photo 3 - Add your image here</span>
+               </div>
+               <div class="gallery-slide">
+                  <span>Photo 4 - Add your image here</span>
+               </div>
+               <div class="gallery-slide">
+                  <span>Photo 5 - Add your image here</span>
+               </div>
+               <div class="gallery-slide">
+                  <span>Photo 6 - Add your image here</span>
+               </div>
+            </div>
+            <button class="gallery-nav prev" onclick="moveGallery(-1)">&#10094;</button>
+            <button class="gallery-nav next" onclick="moveGallery(1)">&#10095;</button>
+         </div>
+         <div class="gallery-dots" id="galleryDots">
+            <span class="gallery-dot active" onclick="goToSlide(0)"></span>
+            <span class="gallery-dot" onclick="goToSlide(1)"></span>
+            <span class="gallery-dot" onclick="goToSlide(2)"></span>
+            <span class="gallery-dot" onclick="goToSlide(3)"></span>
+            <span class="gallery-dot" onclick="goToSlide(4)"></span>
+            <span class="gallery-dot" onclick="goToSlide(5)"></span>
+         </div>
+      </section>
+
+     
+
+      <!-- Family Members Section --
+      <section class="family-section">
+         <h2>Our Families</h2>
+         <div class="family-container">
+            <div class="family-side">
+               <h3>Groom's Family</h3>
+               <div class="family-members">
+                  <div class="family-card">
+                     <div class="family-photo">&#128104;</div>
+                     <div class="family-info">
+                        <h4>Father's Name</h4>
+                        <p>Father of the Groom</p>
+                     </div>
+                  </div>
+                  <div class="family-card">
+                     <div class="family-photo">&#128105;</div>
+                     <div class="family-info">
+                        <h4>Mother's Name</h4>
+                        <p>Mother of the Groom</p>
+                     </div>
+                  </div>
+                  <div class="family-card">
+                     <div class="family-photo">&#128108;</div>
+                     <div class="family-info">
+                        <h4>Brother/Sister Name</h4>
+                        <p>Sibling</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="family-side">
+               <h3>Bride's Family</h3>
+               <div class="family-members">
+                  <div class="family-card">
+                     <div class="family-photo">&#128104;</div>
+                     <div class="family-info">
+                        <h4>Father's Name</h4>
+                        <p>Father of the Bride</p>
+                     </div>
+                  </div>
+                  <div class="family-card">
+                     <div class="family-photo">&#128105;</div>
+                     <div class="family-info">
+                        <h4>Mother's Name</h4>
+                        <p>Mother of the Bride</p>
+                     </div>
+                  </div>
+                  <div class="family-card">
+                     <div class="family-photo">&#128108;</div>
+                     <div class="family-info">
+                        <h4>Brother/Sister Name</h4>
+                        <p>Sibling</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      
+
+      <!-- Audio Element for Background Music -->
+      <div class="music">
+        <audio src="assets/mp3/song.mp3" id="my_audio" loop="loop"></audio>
+      </div>
+
+      <!-- partial -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+      <script src='https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js'></script>
+      <script  src="./js/script.js"></script>
+      <script src="./js/continuous-audio.js"></script>
+      
+      <!-- Google Sheets Integration -->
+      <script src="./google-sheets-config.js"></script>
+      <script src="./admin-data-store.js"></script>
+      
+      <script>
+        // Create floating hearts animation
+        function createFloatingHearts() {
+            const container = document.getElementById('floating-hearts');
+            if (!container) return;
+            
+            const heartSymbols = ['❤️', '💕', '💖', '💗', '💝'];
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 6 + 's';
+                    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    container.appendChild(heart);
+                }, i * 800);
+            }
+        }
+        
+        // Initialize Google Sheets when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+          console.log('Wedding site loaded with Google Sheets integration');
+          
+          // Create floating hearts when welcome overlay shows
+          const welcomeOverlay = document.getElementById('welcome-overlay');
+          if (welcomeOverlay) {
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.target.style.display === 'block') {
+                  createFloatingHearts();
+                }
+              });
+            });
+            observer.observe(welcomeOverlay, { attributes: true, attributeFilter: ['style'] });
+          }
+          
+          // Test Google Sheets connection on load
+          if (window.GoogleSheetsAPI) {
+            window.GoogleSheetsAPI.checkConnection().then(connected => {
+              if (connected) {
+                console.log('✅ Google Sheets connected successfully');
+              } else {
+                console.log('⚠️ Google Sheets not connected, using localStorage');
+              }
+            });
+          }
+        });
+      </script>
+   </body>
+
+  
+
+
+
+
+</html>

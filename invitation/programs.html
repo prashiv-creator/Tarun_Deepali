@@ -1,0 +1,162 @@
+    <!-- Removed unused image sonali.jpeg -->
+    <img src="../assets/img/left.png" alt="flowers left" class="top-left-decoration">
+    <img src="../assets/img/right.png" alt="flowers right" class="top-right-decoration">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Tarun & Deepali's Wedding</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <img src="../assets/img/left.png" alt="flowers left" class="top-left-decoration">
+    <img src="../assets/img/right.png" alt="flowers right" class="top-right-decoration">
+    <div class="programs-box main-programs">
+       <h2>Wedding Programs</h2>
+         <div class="venue-cards-container">
+        
+        <div class="venue-card lagan-card">
+             
+            <div class="venue-card-img" style="background-image:url('../assets/img/lagan.jpg');"></div>
+            <div class="venue-card-content">
+                <h3>Lagan</h3>
+                <div class="venue-card-date">22 April 2026</div>
+                <div class="venue-card-place">Ishwar  Marriage Garden, Jaishingpura khor, Jaipur</div>
+            </div>
+        </div>
+         <div class="venue-card ring-ceremony-card">
+            <div class="venue-card-img" style="background-image:url('../assets/img/ceremony.jpg');"></div>
+            <div class="venue-card-content">
+                <h3>Ring Ceremony</h3>
+                <div class="venue-card-date">24 April 2026</div>
+                <div class="venue-card-place">Ishwar  Marriage Garden,, Jaishingpura khor, Jaipur</div>
+            </div>
+        </div>
+        <div class="venue-card mehndi-card">
+            <div class="venue-card-img" style="background-image:url('../assets/img/mehndi.jpg');"></div>
+            <div class="venue-card-content">
+                <h3>Mehndi</h3>
+                <div class="venue-card-date">24 April 2026</div>
+                <div class="venue-card-place">Mahor house , Jaishingpura khor, Jaipur</div>
+            </div>
+        </div>
+       
+        <div class="venue-card wedding-card">
+            <div class="venue-card-img" style="background-image:url('../assets/img/wedding.jpg');"></div>
+            <div class="venue-card-content">
+                <h3>Wedding</h3>
+                <div class="venue-card-date">25 April 2026</div>
+                <div class="venue-card-place">OM Shiv Marriage Garden, Jaipur</div>
+            </div>
+        </div>
+    </div>
+    <!-- Countdown Timer for Next Event -->
+    <div class="countdown-section">
+        <h3 class="countdown-title">Next Event Countdown</h3>
+        <div id="countdown-timer" class="countdown-timer"></div>
+    </div>
+        <div class="programs-note">We warmly invite you to join all the celebrations!</div>
+        <a href="main.html" class="btn-primary" style="margin-top: 20px;">Proceed to Invitation</a>
+    </div>
+    
+    <style>
+        .venue-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 48px 0 24px 0;
+        }
+        .venue-card {
+            background: #184d2b;
+            color: #ffe9b0;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            width: 320px;
+            max-width: 90vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #e6c97a;
+            transition: transform 0.2s;
+        }
+        .venue-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        .venue-card-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid #e6c97a;
+        }
+        .venue-card-content {
+            padding: 18px 20px 22px 20px;
+            text-align: center;
+        }
+        .venue-card-content h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            margin: 0 0 8px 0;
+            color: #ffe9b0;
+        }
+        .venue-card-date {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            color: #e6c97a;
+        }
+        .venue-card-place {
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .countdown-section {
+            margin: 40px auto 24px auto;
+            text-align: center;
+            background: #184d2b;
+            color: #ffe9b0;
+            border-radius: 16px;
+            padding: 24px 10px 18px 10px;
+            max-width: 400px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        }
+        .countdown-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.7em;
+            margin-bottom: 10px;
+            color: #ffe9b0;
+        }
+        .countdown-timer {
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            color: #e6c97a;
+        }
+    </style>
+    <script>
+        // Set the date for the next event (Mehndi)
+        var nextEventDate = new Date('April 24, 2026 18:00:00').getTime();
+        var countdownElem = document.getElementById('countdown-timer');
+        function updateCountdown() {
+            var now = new Date().getTime();
+            var distance = nextEventDate - now;
+            if (distance < 0) {
+                countdownElem.innerHTML = 'The event is happening now!';
+                return;
+            }
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdownElem.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+    <div class="music">
+        <audio src="../assets/mp3/song.mp3" id="my_audio" loop="loop"></audio>
+    </div>
+    <script src="../js/continuous-audio.js"></script>
+</body>
+</html>

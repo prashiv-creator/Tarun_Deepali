@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Wishes | Tarun & Deepali's Wedding</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: 'Arvo', serif;
+            background: #fff8f0;
+            color: #7a5c4d;
+            margin: 0;
+            padding: 20px;
+        }
+        .review-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #b48a78;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .subsection-title {
+            color: #b48a78;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .wish-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b48a78;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0cfc2;
+            border-radius: 8px;
+            font-family: 'Arvo', serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #b48a78, #e25c67);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Arvo', serif;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        .btn-primary.submitting {
+            animation: buttonSubmit 1s ease-out;
+        }
+        @keyframes buttonSubmit {
+            0% {
+                transform: scale(1);
+                background: linear-gradient(135deg, #b48a78, #e25c67);
+            }
+            50% {
+                transform: scale(0.95);
+                background: linear-gradient(135deg, #28a745, #20c997);
+            }
+            100% {
+                transform: scale(1);
+                background: linear-gradient(135deg, #28a745, #20c997);
+            }
+        }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+        .success-message.show {
+            animation: successBoom 1.5s ease-out;
+        }
+        @keyframes successBoom {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+                background: #d4edda;
+            }
+            20% {
+                transform: scale(1.2);
+                opacity: 1;
+                background: #28a745;
+                box-shadow: 0 0 30px rgba(40, 167, 69, 0.8);
+            }
+            40% {
+                transform: scale(0.9);
+                background: #d4edda;
+                box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
+            }
+            60% {
+                transform: scale(1.1);
+                background: #28a745;
+                box-shadow: 0 0 25px rgba(40, 167, 69, 0.7);
+            }
+            80% {
+                transform: scale(0.95);
+                background: #d4edda;
+                box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                background: #d4edda;
+                box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
+            }
+        }
+        .success-message.celebrating {
+            position: relative;
+        }
+        .success-message.celebrating::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(40, 167, 69, 0.6) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: boomEffect 1s ease-out;
+        }
+        @keyframes boomEffect {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #e25c67;
+            animation: confettiFall 3s ease-out;
+        }
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        .wishes-display {
+            margin: 30px 0;
+        }
+        .wish-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #b48a78;
+        }
+        .wish-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .wish-author {
+            text-align: right;
+            color: #b48a78;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+        }
+        .wish-date {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .info-message {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #bee5eb;
+        }
+        .text-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        .text-accent {
+            color: #b48a78;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #b48a78 0%, #e25c67 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .top-left-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            z-index: -1;
+        }
+        .top-right-decoration {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            z-index: -1;
+        }
+        .admin-only {
+            display: none !important;
+        }
+        .wedding-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .heart-animation {
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .guest-stats {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .stat-card-guest {
+            background: linear-gradient(135deg, #b48a78, #e25c67);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .stat-card-guest:hover {
+            transform: translateY(-3px);
+        }
+        .stat-number-guest {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label-guest {
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        .loading-spinner {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/img/left.png" alt="flowers left" class="top-left-decoration">
+    <img src="../assets/img/right.png" alt="flowers right" class="top-right-decoration">
+     
+    <div class="review-container">
+        <h1 class="section-title">💝 Wedding Wishes</h1>
+        
+        <div class="info-message">
+            <strong>📝 Leave your wishes for Tarun & Deepali!</strong><br>
+            Your beautiful messages will be cherished forever.
+        </div>
+        
+        <!-- Wedding Details -->
+        <div class="wedding-details">
+            <h3 class="subsection-title">🎊 Ring Ceremony</h3>
+            <p style="font-family: 'Arvo', serif; color: #7a5c4d; line-height: 1.6;">
+                <strong>Couple:</strong> Tarun Mahor & Deepali Rajwaniya<br>
+                <strong>Date:</strong> 22 April 2026<br>
+                <strong>Venue:</strong> Ishwar  Marriage Garden, Jaishingpura khor, Jaipur<br>
+                <strong>Time:</strong> 7:00 PM onwards
+            </p>
+        </div>
+        
+        <!-- Wish Form -->
+        <div class="wish-form">
+            <h3 class="subsection-title">✍️ Write Your Wishes</h3>
+            
+            <div class="form-group">
+                <label for="guestName">Your Name:</label>
+                <input type="text" id="guestName" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="guestMessage">Your Message:</label>
+                <textarea id="guestMessage" placeholder="Write your wedding wishes here..." required></textarea>
+            </div>
+            
+            <button onclick="addWish()" class="btn-primary">💝 Submit Wishes</button>
+        </div>
+        
+        <!-- Success Message -->
+        <div id="successMessage" style="display: none;" class="success-message">
+            <strong>✅ Thank you!</strong> Your wishes have been saved successfully!
+        </div>
+        
+        <!-- Wishes Display -->
+        <div class="wishes-display">
+            <h3 class="subsection-title" style="text-align: center;">💌 Recent Wishes</h3>
+            <div id="wishesList">
+                <p style="text-align: center; color: #999; font-style: italic;">No wishes yet. Be the first to leave your wishes! 💝</p>
+            </div>
+        </div>
+        
+        <!-- Guest Statistics -->
+        <div class="guest-stats">
+            <h3 class="subsection-title" style="text-align: center;">📊 Wishes Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card-guest">
+                    <div class="stat-number-guest" id="guestTotalWishes">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label-guest">Total Wishes</div>
+                </div>
+                <div class="stat-card-guest">
+                    <div class="stat-number-guest" id="guestTodayWishes">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label-guest">Today's Wishes</div>
+                </div>
+                <div class="stat-card-guest">
+                    <div class="stat-number-guest" id="guestLatestWish" style="font-size: 1.2em; font-style: italic;">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label-guest">Latest Wish</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Admin Section -->
+        <div class="admin-section admin-only" id="adminSection" style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #ffeaa7;">
+            <h3 style="color: #856404;">🔐 Admin Panel</h3>
+            <p style="color: #856404;">Access admin features and manage wishes</p>
+            
+            <!-- Admin Login Form -->
+            <div id="adminPanel" style="display: none; margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e25c67;">
+                <p style="color: #b48a78; font-family: 'Arvo', serif; margin-bottom: 15px;">🔐 Admin Access Detected!</p>
+                <input type="password" id="adminPassword" placeholder="Enter Admin Password" style="width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #e0cfc2; border-radius: 5px; font-family: 'Arvo', serif;">
+                <button onclick="adminLogin()" class="btn-primary" style="margin-top: 5px;">Login</button>
+                <button onclick="adminLogout()" class="btn-primary" style="margin-top: 5px; background: #dc3545; margin-left: 10px;">Logout</button>
+            </div>
+            
+            <div class="stats" id="statsSection" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalWishes">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label">Total Wishes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="todayWishes">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label">Today's Wishes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="latestWish">
+                        <span class="loading-spinner">⟳</span>
+                    </div>
+                    <div class="stat-label">Latest Wish</div>
+                </div>
+            </div>
+            
+            <div id="adminActions" style="display: none;">
+                <button onclick="downloadExcel()" class="btn-primary">📥 Download Excel (CSV)</button>
+                <button onclick="clearAllWishes()" class="btn-primary" style="background: #dc3545; margin-left: 10px;">🗑️ Clear All Wishes</button>
+                <button onclick="testSupabaseConnection()" class="btn-primary" style="background: #007bff; margin-left: 10px;">🔍 Test Supabase</button>
+                <button onclick="forceRefresh()" class="btn-primary" style="background: #28a745; margin-left: 10px;">🔄 Refresh Wishes</button>
+                
+                <div id="testResult" style="margin-top: 10px; padding: 10px; border-radius: 5px; display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Proceed Button -->
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="main.html" class="btn-gradient">← Back to Wedding Invitation</a>
+            <a href="thankyou.html" onclick="finalSubmit()" class="btn-gradient" style="margin-left: 15px;">Submit to Thanks →</a>
+        </div>
+        
+        <!-- Footer Message -->
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <p class="text-dancing" style="color: #b48a78; font-size: 1.2em; margin: 0;">
+                <span class="heart-animation">❤️</span><br>
+                Your presence means the world to us!<br>
+                <span class="heart-animation">❤️</span>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Music Player -->
+    <div class="music">
+        <audio src="../assets/mp3/song.mp3" id="my_audio" loop="loop"></audio>
+    </div>
+    <script src="../js/continuous-audio.js"></script>
+    
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../supabase-config.js"></script>
+    
+    <!-- Legacy Scripts for Compatibility -->
+    <script src="../google-sheets-config.js"></script>
+    <script src="../admin-data-store.js"></script>
+    
+    <script>
+        // Simple Guest Book Functions
+        
+        // Initialize on page load
+        window.onload = function() {
+            loadGuestName();
+            displayWishes();
+            updateGuestStats();
+            checkAdminStatus();
+        };
+        
+        // Update guest statistics
+        async function updateGuestStats() {
+            // Show loading spinners
+            document.getElementById('guestTotalWishes').innerHTML = '<span class="loading-spinner">⟳</span>';
+            document.getElementById('guestTodayWishes').innerHTML = '<span class="loading-spinner">⟳</span>';
+            document.getElementById('guestLatestWish').innerHTML = '<span class="loading-spinner">⟳</span>';
+            
+            let total = 0;
+            let today = 0;
+            let latestWishText = 'No wishes yet';
+            
+            // Try to get stats from Supabase first
+            if (window.SupabaseAPI && window.SupabaseAPI.getStats) {
+                try {
+                    const result = await window.SupabaseAPI.getStats();
+                    if (result.status === 'success') {
+                        total = result.stats.total;
+                        today = result.stats.today || 0;
+                        latestWishText = result.stats.latest ? truncateText(result.stats.latest, 40) : 'No wishes yet';
+                        
+                        // Update UI with animation
+                        animateGuestNumber('guestTotalWishes', total);
+                        animateGuestNumber('guestTodayWishes', today);
+                        document.getElementById('guestLatestWish').textContent = latestWishText;
+                        return;
+                    }
+                } catch (error) {
+                    console.log('Supabase stats failed, using localStorage:', error);
+                }
+            }
+            
+            // Fallback to localStorage
+            const wishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            const todayDate = new Date().toDateString();
+            const todayWishes = wishes.filter(w => {
+                const wishDate = new Date(w.timestamp || w.date).toDateString();
+                return wishDate === todayDate;
+            });
+            
+            total = wishes.length;
+            today = todayWishes.length;
+            latestWishText = wishes.length > 0 ? truncateText(wishes[wishes.length - 1].message, 40) : 'No wishes yet';
+            
+            // Update UI with animation
+            animateGuestNumber('guestTotalWishes', total);
+            animateGuestNumber('guestTodayWishes', today);
+            document.getElementById('guestLatestWish').textContent = latestWishText;
+        }
+        
+        // Animate guest numbers
+        function animateGuestNumber(elementId, targetNumber) {
+            const element = document.getElementById(elementId);
+            const duration = 800;
+            const steps = 15;
+            const increment = targetNumber / steps;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= targetNumber) {
+                    current = targetNumber;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, duration / steps);
+        }
+        
+        // Truncate text helper
+        function truncateText(text, maxLength) {
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        }
+        function loadGuestName() {
+            const guestName = localStorage.getItem('guestName');
+            const nameInput = document.getElementById('guestName');
+            
+            if (guestName && nameInput) {
+                nameInput.value = guestName;
+            }
+        }
+        
+        // Submit wish function
+        function addWish() {
+            const nameInput = document.getElementById('guestName');
+            const messageInput = document.getElementById('guestMessage');
+            const name = nameInput ? nameInput.value.trim() : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+            
+            if (!name || !message) {
+                alert('Please enter your name and message!');
+                return;
+            }
+            
+            // Prepare wish data
+            const wishData = {
+                name: name,
+                message: message,
+                date: new Date().toLocaleString(),
+                timestamp: new Date().toISOString()
+            };
+            
+            // Try Supabase first
+            if (window.SupabaseAPI && window.SupabaseAPI.saveWish) {
+                window.SupabaseAPI.saveWish({
+                    name: name,
+                    message: message
+                }).then((result) => {
+                    console.log('Wish saved to Supabase:', result);
+                    saveToLocalStorage(wishData);
+                    clearForm();
+                    displayWishes();
+                    updateGuestStats();
+                    showSuccessMessage(name);
+                }).catch(error => {
+                    console.error('Supabase save failed:', error);
+                    saveToLocalStorage(wishData);
+                    clearForm();
+                    displayWishes();
+                    updateGuestStats();
+                    showSuccessMessage(name);
+                });
+            } else {
+                // Fallback to localStorage
+                saveToLocalStorage(wishData);
+                clearForm();
+                displayWishes();
+                updateGuestStats();
+                showSuccessMessage(name);
+            }
+        }
+        
+        // Save to localStorage
+        function saveToLocalStorage(wishData) {
+            const wishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            wishes.push({
+                ...wishData,
+                id: Date.now()
+            });
+            localStorage.setItem('weddingWishes', JSON.stringify(wishes));
+        }
+        
+        // Clear form
+        function clearForm() {
+            document.getElementById('guestName').value = '';
+            document.getElementById('guestMessage').value = '';
+        }
+        
+        // Show success message with boom effect
+        function showSuccessMessage(name) {
+            const successDiv = document.getElementById('successMessage');
+            const submitBtn = document.querySelector('.btn-primary');
+            
+            // Add submitting animation to button
+            submitBtn.classList.add('submitting');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '⏳ Submitting...';
+            
+            // Show success message with boom effect after delay
+            setTimeout(() => {
+                // Reset button
+                submitBtn.classList.remove('submitting');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '💝 Submit Wishes';
+                
+                // Show success message with boom animation
+                successDiv.classList.add('show', 'celebrating');
+                successDiv.style.display = 'block';
+                
+                // Create confetti effect
+                createConfetti();
+                
+                // Remove animation classes after animation completes
+                setTimeout(() => {
+                    successDiv.classList.remove('show', 'celebrating');
+                }, 1500);
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successDiv.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#e25c67', '#b48a78', '#28a745', '#ffc107', '#17a2b8'];
+            const container = document.querySelector('.review-container');
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    confetti.style.width = (Math.random() * 8 + 5) + 'px';
+                    confetti.style.height = confetti.style.width;
+                    container.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+        
+        // Display wishes
+        async function displayWishes() {
+            // Try to get wishes from Supabase first
+            if (window.SupabaseAPI && window.SupabaseAPI.getRecentWishes) {
+                try {
+                    const result = await window.SupabaseAPI.getRecentWishes(5);
+                    if (result.status === 'success') {
+                        displayWishesFromData(result.wishes);
+                        return;
+                    }
+                } catch (error) {
+                    console.log('Supabase fetch failed, using localStorage:', error);
+                }
+            }
+            
+            // Fallback to localStorage
+            const wishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            displayWishesFromData(wishes);
+        }
+        
+        function displayWishesFromData(wishes) {
+            const wishesList = document.getElementById('wishesList');
+            
+            if (wishes.length === 0) {
+                wishesList.innerHTML = '<p style="text-align: center; color: #999; font-style: italic;">No wishes yet. Be the first to leave your wishes! 💝</p>';
+                return;
+            }
+            
+            // Display last 5 wishes (most recent first)
+            const recentWishes = wishes.slice(-5).reverse();
+            
+            let html = '';
+            recentWishes.forEach(wish => {
+                html += `
+                    <div class="wish-card">
+                        <div class="wish-text">"${wish.message}"</div>
+                        <div class="wish-author">- ${wish.name}</div>
+                        <div class="wish-date">${wish.date}</div>
+                    </div>
+                `;
+            });
+            
+            wishesList.innerHTML = html;
+        }
+        
+        // Final submit function
+        function finalSubmit() {
+            addWish();
+            setTimeout(() => {
+                window.location.href = 'thankyou.html';
+            }, 1000);
+        }
+        
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            displayWishes();
+            updateGuestStats();
+            
+            // Auto-trigger admin panel when typing
+            const messageInput = document.getElementById('guestMessage');
+            if (messageInput) {
+                messageInput.addEventListener('input', function() {
+                    const message = this.value.trim().toLowerCase();
+                    const adminSection = document.getElementById('adminSection');
+                    const adminPanel = document.getElementById('adminPanel');
+                    
+                    // Check for admin keywords
+                    if (message === 'admin' || message === 'administrator' || message === 'admin123') {
+                        // Show admin section with login form
+                        adminSection.classList.remove('admin-only');
+                        adminSection.style.display = 'block';
+                        adminPanel.style.display = 'block';
+                        
+                        // Clear the admin keyword
+                        this.value = '';
+                        
+                        // Focus on password field
+                        setTimeout(() => {
+                            const passwordField = document.getElementById('adminPassword');
+                            if (passwordField) {
+                                passwordField.focus();
+                            }
+                        }, 100);
+                    }
+                });
+            }
+            
+            // Check admin status on page load
+            checkAdminStatus();
+            
+            // Auto-refresh guest stats every 30 seconds
+            setInterval(() => {
+                updateGuestStats();
+            }, 30000);
+            
+            // Auto-refresh wishes every 60 seconds
+            setInterval(() => {
+                displayWishes();
+            }, 60000);
+        });
+        
+        // Check admin status on page load
+        function checkAdminStatus() {
+            const adminSection = document.getElementById('adminSection');
+            const adminPanel = document.getElementById('adminPanel');
+            const statsSection = document.getElementById('statsSection');
+            const adminActions = document.getElementById('adminActions');
+            const isLoggedIn = sessionStorage.getItem('adminLoggedIn');
+            
+            if (isLoggedIn === 'true') {
+                // Show admin section and all features
+                adminSection.classList.remove('admin-only');
+                adminSection.style.display = 'block';
+                adminPanel.style.display = 'block';
+                statsSection.style.display = 'block';
+                adminActions.style.display = 'block';
+                
+                // Update admin stats
+                updateAdminStats();
+            } else {
+                // Hide admin section completely
+                adminSection.classList.add('admin-only');
+                adminSection.style.display = 'none';
+                adminPanel.style.display = 'none';
+                statsSection.style.display = 'none';
+                adminActions.style.display = 'none';
+            }
+        }
+        
+        // Admin login function
+        function adminLogin() {
+            const password = document.getElementById('adminPassword').value.trim();
+            
+            // Default password (you can change this)
+            const validPassword = 'mahor123';
+            
+            if (password === validPassword) {
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                document.getElementById('adminPassword').value = '';
+                
+                // Show all admin features
+                const adminSection = document.getElementById('adminSection');
+                const adminPanel = document.getElementById('adminPanel');
+                const statsSection = document.getElementById('statsSection');
+                const adminActions = document.getElementById('adminActions');
+                
+                adminSection.classList.remove('admin-only');
+                adminSection.style.display = 'block';
+                adminPanel.style.display = 'block';
+                statsSection.style.display = 'block';
+                adminActions.style.display = 'block';
+                
+                // Update admin stats
+                updateAdminStats();
+                
+                alert('Admin login successful! You can now access admin features.');
+            } else {
+                alert('Invalid password! Please try again.');
+            }
+        }
+        
+        // Admin logout function
+        function adminLogout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            
+            // Hide admin section completely
+            const adminSection = document.getElementById('adminSection');
+            const adminPanel = document.getElementById('adminPanel');
+            const statsSection = document.getElementById('statsSection');
+            const adminActions = document.getElementById('adminActions');
+            
+            adminSection.classList.add('admin-only');
+            adminSection.style.display = 'none';
+            adminPanel.style.display = 'none';
+            statsSection.style.display = 'none';
+            adminActions.style.display = 'none';
+            
+            alert('Admin logged out successfully!');
+        }
+        
+        // Update admin statistics
+        async function updateAdminStats() {
+            // Show loading spinners
+            document.getElementById('totalWishes').innerHTML = '<span class="loading-spinner">⟳</span>';
+            document.getElementById('todayWishes').innerHTML = '<span class="loading-spinner">⟳</span>';
+            document.getElementById('latestWish').innerHTML = '<span class="loading-spinner">⟳</span>';
+            
+            let total = 0;
+            let today = 0;
+            let latestWishText = 'No wishes yet';
+            
+            // Try to get stats from Supabase first
+            if (window.SupabaseAPI && window.SupabaseAPI.getStats) {
+                try {
+                    const result = await window.SupabaseAPI.getStats();
+                    if (result.status === 'success') {
+                        total = result.stats.total;
+                        today = result.stats.today || 0;
+                        latestWishText = result.stats.latest ? truncateText(result.stats.latest, 30) : 'No wishes yet';
+                        
+                        // Update UI with animation
+                        animateNumber('totalWishes', total);
+                        animateNumber('todayWishes', today);
+                        document.getElementById('latestWish').textContent = latestWishText;
+                        return;
+                    }
+                } catch (error) {
+                    console.log('Supabase stats failed, using localStorage:', error);
+                }
+            }
+            
+            // Fallback to localStorage
+            const wishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            const todayDate = new Date().toDateString();
+            const todayWishes = wishes.filter(w => {
+                const wishDate = new Date(w.timestamp || w.date).toDateString();
+                return wishDate === todayDate;
+            });
+            
+            total = wishes.length;
+            today = todayWishes.length;
+            latestWishText = wishes.length > 0 ? truncateText(wishes[wishes.length - 1].message, 30) : 'No wishes yet';
+            
+            // Update UI with animation
+            animateNumber('totalWishes', total);
+            animateNumber('todayWishes', today);
+            document.getElementById('latestWish').textContent = latestWishText;
+        }
+        
+        // Animate numbers for admin stats
+        function animateNumber(elementId, targetNumber) {
+            const element = document.getElementById(elementId);
+            const duration = 800;
+            const steps = 15;
+            const increment = targetNumber / steps;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= targetNumber) {
+                    current = targetNumber;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, duration / steps);
+        }
+        
+        // Download Excel function
+        async function downloadExcel() {
+            let wishes = [];
+            
+            // Try to get wishes from Supabase first
+            if (window.SupabaseAPI && window.SupabaseAPI.getAllWishes) {
+                try {
+                    const result = await window.SupabaseAPI.getAllWishes();
+                    if (result.status === 'success') {
+                        wishes = result.wishes;
+                    }
+                } catch (error) {
+                    console.log('Supabase fetch failed, using localStorage:', error);
+                }
+            }
+            
+            // Fallback to localStorage
+            if (wishes.length === 0) {
+                wishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            }
+            
+            if (wishes.length === 0) {
+                alert('No wishes to download yet!');
+                return;
+            }
+            
+            // Create CSV content
+            let csv = 'Entry#,Name,Message,Date,Timestamp\n';
+            wishes.forEach((wish, index) => {
+                csv += `${index + 1},"${wish.name}","${wish.message}","${wish.date}","${wish.timestamp || ''}"\n`;
+            });
+            
+            // Create download link
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'wedding-wishes-' + new Date().toISOString().split('T')[0] + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            alert('Excel file downloaded successfully!');
+        }
+        
+        // Clear all wishes function
+        async function clearAllWishes() {
+            if (confirm('Are you sure you want to clear all wishes? This action cannot be undone.')) {
+                // Try to clear from Supabase first
+                if (window.SupabaseAPI && window.SupabaseAPI.clearAllWishes) {
+                    try {
+                        const result = await window.SupabaseAPI.clearAllWishes();
+                        console.log('Supabase clear result:', result);
+                    } catch (error) {
+                        console.log('Supabase clear failed, using localStorage:', error);
+                    }
+                }
+                
+                // Always clear localStorage as fallback
+                localStorage.removeItem('weddingWishes');
+                displayWishes();
+                updateGuestStats();
+                updateAdminStats();
+                alert('All wishes cleared!');
+            }
+        }
+        
+        // Test Supabase connection function
+        async function testSupabaseConnection() {
+            console.log('Testing Supabase connection...');
+            const resultDiv = document.getElementById('testResult');
+            resultDiv.style.display = 'block';
+            resultDiv.style.background = '#fff3cd';
+            resultDiv.style.color = '#856404';
+            resultDiv.innerHTML = '🔄 Testing connection...';
+            
+            try {
+                if (window.SupabaseAPI && window.SupabaseAPI.checkConnection) {
+                    const isConnected = await window.SupabaseAPI.checkConnection();
+                    
+                    if (isConnected) {
+                        resultDiv.style.background = '#d4edda';
+                        resultDiv.style.color = '#155724';
+                        resultDiv.innerHTML = '✅ Supabase connection successful!';
+                    } else {
+                        throw new Error('Connection test failed');
+                    }
+                } else {
+                    throw new Error('Supabase API not available');
+                }
+            } catch (error) {
+                resultDiv.style.background = '#f8d7da';
+                resultDiv.style.color = '#721c24';
+                resultDiv.innerHTML = '❌ Connection failed: ' + error.message;
+            }
+        }
+        
+        // Force refresh function
+        async function forceRefresh() {
+            try {
+                // Force refresh both wishes and stats
+                await Promise.all([
+                    displayWishes(),
+                    updateGuestStats(),
+                    updateAdminStats()
+                ]);
+                
+                alert('Data refreshed successfully!');
+            } catch (error) {
+                console.error('Refresh failed:', error);
+                alert('Refresh failed: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
