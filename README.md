@@ -13,7 +13,7 @@
 
 ## 🌟 About Our Wedding
 
-With the divine grace of almighty, we are delighted to invite you and your family to celebrate our wedding ceremony. Join us as we begin our journey together as husband and wife.
+With the divine Grace of almighty, we are delighted to invite you and your family to celebrate our wedding ceremony. Join us as we begin our journey together as husband and wife.
 
 ### 📋 Wedding Details
 - **Date:** April 25, 2026
@@ -23,22 +23,25 @@ With the divine grace of almighty, we are delighted to invite you and your famil
 
 ---
 
-## 🎵 Features
+## � Features
 
-### 🎯 Multi-Step Journey
+### � Multi-Step Journey
 Experience our love story through an interactive journey:
 1. **Welcome** - Enter your name and join our celebration
 2. **Our Story** - Discover how we met and fell in love
 3. **Wedding Programs** - View all ceremony events and schedule
 4. **Main Invitation** - Complete wedding details and venue information
 5. **Guest Book** - Leave your heartfelt wishes for the couple
-6. **Thank You** - Final celebration message
+6. **Admin Dashboard** - Manage wishes and export data
+7. **Thank You** - Final celebration message with timeline effects
 
 ### 🎵 Continuous Background Music
 - **Song:** Beautiful wedding melody
 - **Auto-play:** Starts immediately on page load
 - **Continuous:** Never stops between pages
-- **Seamless:** Perfect synchronization across all pages
+- **Local Storage:** Remembers playback position
+- **Cross-tab Sync:** Multiple tabs stay synchronized
+- **Fallback Methods:** Multiple autoplay attempts
 
 ### 📱 Responsive Design
 - **Mobile Friendly:** Perfect on all devices
@@ -70,7 +73,10 @@ Experience our love story through an interactive journey:
 │              📝 GUEST BOOK                   │
 │        (Leave wishes & download CSV)              │
 ├─────────────────────────────────────────────────────────┤
-│              🙏 THANK YOU                    │
+│              �️ ADMIN DASHBOARD               │
+│    (Manage wishes, approve/reject, export)        │
+├─────────────────────────────────────────────────────────┤
+│              �🙏 THANK YOU                    │
 │          (Final celebration message)             │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -101,7 +107,9 @@ Wedding-Invitation-master/
 │   ├── 📄 programs.html         # Wedding programs & events
 │   ├── 📄 main.html            # Main invitation details
 │   ├── 📄 review.html          # Guest book & wishes
-│   └── 📄 thankyou.html        # Thank you message
+│   ├── 📄 thankyou.html        # Thank you message
+│   ├── 📄 admin-dashboard.html  # Admin panel for wishes management
+│   └── 📄 test-supabase.html  # Supabase connection test
 ├── 📁 css/
 │   └── 📄 style.css            # All styling & animations
 ├── 📁 js/
@@ -111,6 +119,18 @@ Wedding-Invitation-master/
 │   ├── 🎵 mp3/
 │   │   └── 🎵 song.mp3         # Background music
 │   └── 🖼️ img/                 # All images & decorations
+│       ├── 🖼️ wedding-couple.jpg
+│       ├── 🖼️ left.png
+│       ├── 🖼️ right.png
+│       ├── 🖼️ mehndi.jpg
+│       ├── 🖼️ wedding.jpg
+│       ├── 🖼️ ceremony.jpg
+│       ├── 🖼️ welcom.png
+│       └── 🖼️ Thanku.png
+├── 📄 supabase-config.js      # Supabase database integration
+├── 📄 google-sheets-config.js  # Google Sheets backup
+├── 📄 admin-data-store.js    # Data management utilities
+├── 📄 supabase-schema.sql     # Database schema
 └── 📄 README.md               # This file
 ```
 
@@ -124,9 +144,23 @@ Wedding-Invitation-master/
 3. **Enjoy the experience!** 🎉
 
 ### 🌍 Online Deployment
-1. **Upload to any web host** (Netlify, GitHub Pages, etc.)
-2. **Ensure all file paths** are correct
-3. **Test all pages** and functionality
+
+#### Option 1: GitHub Pages
+1. **Push to GitHub:** Upload all files to your repository
+2. **Enable Pages:** Go to Settings → Pages
+3. **Select Source:** Choose `main` branch
+4. **Publish:** Your site will be live at `https://username.github.io/repository-name`
+
+#### Option 2: Netlify
+1. **Sign up:** Create account at [Netlify](https://netlify.com)
+2. **Drag & Drop:** Upload the entire project folder
+3. **Deploy:** Your site goes live instantly
+4. **Custom Domain:** Connect your custom domain if needed
+
+#### Option 3: Vercel
+1. **Install Vercel CLI:** `npm i -g vercel`
+2. **Deploy:** Run `vercel` in project directory
+3. **Live:** Get instant deployment
 
 ---
 
@@ -137,9 +171,9 @@ Wedding-Invitation-master/
 - **Page Navigation:** Continues seamlessly between pages
 - **Local Storage:** Remembers playback position
 - **Cross-tab Sync:** Multiple tabs stay synchronized
-- **Fallback Methods:** Multiple autoplay attempts
+- **Fallback Methods:** Multiple autoplay attempts for different browsers
 
-### 🎵 Music File
+### � Music File
 - **Location:** `assets/mp3/song.mp3`
 - **Format:** MP3 (recommended)
 - **Loop:** Continuous playback
@@ -150,20 +184,39 @@ Wedding-Invitation-master/
 ## 📝 Guest Book System
 
 ### 💾 Data Storage
-- **Method:** Browser localStorage
+- **Primary:** Supabase (real-time database)
+- **Fallback:** Browser localStorage
 - **Format:** JSON with timestamps
 - **Export:** CSV download for Excel
 - **Auto-fill:** Guest name from welcome page
 
 ### 📊 CSV Export Format
 ```csv
-Name,Message,Date
-"Guest Name","Wedding wishes!","25/03/2026, 12:30:45 PM"
+Name,Message,Date,Status
+"Guest Name","Wedding wishes!","25/03/2026, 12:30:45 PM","approved"
 ```
 
 ---
 
-## 🛠️ Customization
+## 🛠️ Admin Dashboard
+
+### 🔐 Authentication
+- **Password:** `mahor123`
+- **Session:** Browser sessionStorage
+- **Auto-logout:** On browser close
+
+### 📊 Features
+- **View all wishes** with search and filter
+- **Approve/Reject** pending wishes
+- **Edit/Delete** individual wishes
+- **Bulk operations** (select all, approve/reject/delete)
+- **Export to CSV** for data backup
+- **Real-time sync** with Supabase
+- **Fallback to localStorage** when offline
+
+---
+
+## 🎨 Customization
 
 ### 🎨 Changing Colors
 Edit `css/style.css` and update:
@@ -175,7 +228,7 @@ Edit `css/style.css` and update:
 Update in all HTML files:
 - `index.html` - Welcome overlay
 - `main.html` - Couple names
-- All meta titles
+- All meta titles and descriptions
 
 ### 📅 Changing Date
 Update in multiple files:
@@ -185,22 +238,22 @@ Update in multiple files:
 
 ---
 
-## 🌟 Special Features
+## 🔧 Technical Details
 
-### 🌸 Sakura Animation
-- Beautiful falling petals effect
-- Romantic atmosphere
-- Performance optimized
+### 📱 Responsive Breakpoints
+- **Mobile:** 320px - 768px
+- **Tablet:** 768px - 1024px
+- **Desktop:** 1024px+
 
-### 📱 Mobile Optimization
-- Touch-friendly buttons
-- Responsive text sizing
-- Optimized images
+### 🎭 Animation Performance
+- **CSS Transforms:** Hardware acceleration
+- **RequestAnimationFrame:** Smooth 60fps
+- **Optimized:** Minimal reflows
 
-### 🎯 Accessibility
-- Semantic HTML5 structure
-- ARIA labels where needed
-- Keyboard navigation support
+### � Audio Compatibility
+- **Autoplay Policies:** Handles browser restrictions
+- **Mobile Support:** Touch gesture controls
+- **Fallback Methods:** Multiple autoplay strategies
 
 ---
 
@@ -211,6 +264,7 @@ Feel free to:
 - 💡 Suggest improvements
 - 🎨 Design enhancements
 - 📱 Mobile optimizations
+- 🌍 Translation support
 
 ---
 
@@ -220,12 +274,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 🙏 Acknowledgments
+## 🌐 Live Demo
 
-- **Beautiful design** inspired by traditional Indian weddings
-- **Sakura animation** by jQuery-Sakura plugin
-- **Google Fonts** for beautiful typography
-- **Font Awesome** for elegant icons
+[![Live Demo](https://img.shields.io/badge/Live-Demo-Online-brightgreen?style=for-the-badge)](https://your-domain.com)
 
 ---
 
@@ -233,13 +284,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For any questions or support:
 - **Email:** pra.business123@gmail.com
-- **Phone:** +91 7878603568
-
----
-
-## 🌐 Live Demo
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-Online-brightgreen?style=for-the-badge)](https://your-domain.com)
+- **Phone:** +91 9602923458
 
 ---
 
