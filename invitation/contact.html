@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Tarun & Deepali's Wedding</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap'>
+    
+    <style>
+        body {
+            background: #fff8f0;
+            font-family: 'Arvo', serif;
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/img/left.png" alt="flowers left" class="top-left-decoration">
+    <img src="../assets/img/right.png" alt="flowers right" class="top-right-decoration">
+    
+            
+        <!-- Created by Praveen - Final Project Completion -->
+        <div id="praveenContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); z-index: 9999; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="text-align: center; color: white;">
+                <h1 style="font-size: 3em; margin-bottom: 20px; font-family: 'Dancing Script', cursive;">💑 Thank You  💑</h1>
+                <br>
+                <p style="font-size: 1.5em; margin-bottom: 30px; font-family: 'Arvo', serif;">Created with ❤️ by Praveen Rajwaniya</p>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px);">
+                    <h2 style="color: #ffd700; margin-bottom: 15px;">🎉 Wedding Invitation System 🎉</h2>
+                    <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 1.8;">
+                       <li>✅ Mobile No. 9116380924</li>
+                        <!--li>✅ Guest Book with Supabase</li>
+                        <li>✅ Admin Dashboard</li>
+                        <li>✅ PDF Integration</li>
+                        <li>✅ Responsive Design</li>
+                        <li>✅ Beautiful Animations</li-->
+                        <li>✅ Email: praveenrajwaniya@gmail.com</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-style: italic;">"Every love story is beautiful, but this one is our favorite!"
+                        <br>"हर प्रेम कहानी खूबसूरत होती है, लेकिन यह वाली हमारी पसंदीदा है!"
+                    </p>
+                </div>
+                <button onclick="closePraveenContainer()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; background: #e25c67; color: white; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease;">Close & Celebrate 🎊</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="music">
+        <audio src="../assets/mp3/song.mp3" id="my_audio" loop="loop" preload="auto"></audio>
+        <button onclick="startMusic()" style="position: fixed; bottom: 20px; right: 20px; background: rgba(226, 92, 103, 0.8); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 1.1em; cursor: pointer; z-index: 1000; transition: all 0.3s ease;">
+            🎵 Play Music
+        </button>
+    </div>
+    <script src="../js/continuous-audio.js"></script>
+    
+    <script>
+        // Variable to track if music should play
+        let musicStarted = false;
+        
+        // Function to start music on user click
+        function startMusic() {
+            if (!musicStarted) {
+                const audio = document.getElementById('my_audio');
+                const playButton = document.querySelector('button[onclick="startMusic()"]');
+                
+                // Start the audio
+                audio.play().then(() => {
+                    musicStarted = true;
+                    // Hide the play button
+                    playButton.style.display = 'none';
+                    // Start continuous audio system
+                    if (typeof startContinuousAudio === 'function') {
+                        startContinuousAudio();
+                    }
+                }).catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+            }
+        }
+        
+        // Function to stop music and redirect
+        function stopMusicAndRedirect() {
+            // Stop the music
+            const audio = document.getElementById('my_audio');
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            
+            // Clear any continuous audio
+            if (typeof stopContinuousAudio === 'function') {
+                stopContinuousAudio();
+            }
+            
+            // Redirect to home page
+            window.location.href = '../index.html';
+        }
+        
+        // Function to close Praveen container
+        function closePraveenContainer() {
+            const praveenContainer = document.getElementById('praveenContainer');
+            praveenContainer.style.opacity = '0';
+            setTimeout(() => {
+                praveenContainer.style.display = 'none';
+            }, 500);
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent continuous audio from auto-starting
+            musicStarted = false;
+            
+            // Show Praveen container after a short delay
+            setTimeout(() => {
+                const praveenContainer = document.getElementById('praveenContainer');
+                praveenContainer.style.display = 'flex';
+                praveenContainer.style.opacity = '0';
+                
+                setTimeout(() => {
+                    praveenContainer.style.transition = 'opacity 0.5s ease';
+                    praveenContainer.style.opacity = '1';
+                }, 100);
+                
+                // After 7 seconds, stop music and redirect to home
+                setTimeout(() => {
+                    stopMusicAndRedirect();
+                }, 7000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
