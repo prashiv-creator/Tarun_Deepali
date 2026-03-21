@@ -120,11 +120,6 @@
             <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 1.5em; cursor: pointer;" onclick="closeThankYouImage()">✕</div>
         </div>
         
-        <!-- PDF Display -->
-        <div id="pdfContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center;">
-            <iframe src="https://prashiv-creator.github.io/Tarun_Deepali/invitation/Tarun%20%26%20Dipali.pdf" style="width: 90%; height: 90%; border: none; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);"></iframe>
-            <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 1.5em; cursor: pointer;" onclick="closePDF()">✕</div>
-        </div>
         </div>
     </div>
     
@@ -160,15 +155,8 @@
         }
         
         function showPDF() {
-            const pdfContainer = document.getElementById('pdfContainer');
-            pdfContainer.style.display = 'flex';
-            pdfContainer.style.opacity = '0';
-            
-            // Fade in animation
-            setTimeout(() => {
-                pdfContainer.style.transition = 'opacity 0.5s ease';
-                pdfContainer.style.opacity = '1';
-            }, 100);
+            // PDF functionality removed - now redirects to contact.html
+            window.location.href = 'contact.html';
         }
         
         function closeThankYouImage() {
@@ -179,15 +167,7 @@
             }, 500);
         }
         
-        function closePDF() {
-            const pdfContainer = document.getElementById('pdfContainer');
-            pdfContainer.style.opacity = '0';
-            setTimeout(() => {
-                pdfContainer.style.display = 'none';
-            }, 500);
-        }
-        
-        // Check if user came from guest book submission
+            // Check if user came from guest book submission
         document.addEventListener('DOMContentLoaded', function() {
             const wishSubmitted = sessionStorage.getItem('wishSubmitted');
             const submissionTime = sessionStorage.getItem('submissionTime');
